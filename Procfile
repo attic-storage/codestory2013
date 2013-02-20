@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -DTG_ENV=prod -jar build/tmp/jetty-runner-8.1.5.v20120716.jar --port $PORT build/libs/*.war

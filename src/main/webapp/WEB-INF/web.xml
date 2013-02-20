@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+    <servlet>
+        <servlet-name>DefaultServlet</servlet-name>
+        <servlet-class>groovy.servlet.GroovyServlet</servlet-class>
+        <init-param>
+            <param-name>resource.name.regex</param-name>
+            <param-value>.*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>resource.name.replacement</param-name>
+            <param-value>questions.groovy</param-value>
+        </init-param>
+        <init-param>
+            <param-name>resource.name.replace.all</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>EnonceServlet</servlet-name>
+        <servlet-class>codestory.EnonceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JajascriptOptimizeServlet</servlet-name>
+        <servlet-class>codestory.JajascriptOptimizeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ScalaskelChangeServlet</servlet-name>
+        <servlet-class>groovy.servlet.GroovyServlet</servlet-class>
+        <init-param>
+            <param-name>resource.name.regex</param-name>
+            <param-value>.*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>resource.name.replacement</param-name>
+            <param-value>scalaskel-change.groovy</param-value>
+        </init-param>
+        <init-param>
+            <param-name>resource.name.replace.all</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ScalaskelChangeServlet</servlet-name>
+        <url-pattern>/scalaskel/change/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnonceServlet</servlet-name>
+        <url-pattern>/enonce/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JajascriptOptimizeServlet</servlet-name>
+        <url-pattern>/jajascript/optimize</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DefaultServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
